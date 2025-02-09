@@ -1,0 +1,51 @@
+{
+	"name": "Ampersand project",
+	"dockerFile": "Dockerfile",
+	"runArgs": [
+		"--privileged"
+	],
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			// See https://github.com/devcontainers/features/tree/main/src/docker-in-docker
+			"version": "latest",
+			"moby": true,
+			"dockerDashComposeVersion": "latest"
+		},
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": false,
+			"installOhMyZsh": true,
+			"installOhMyZshConfig": true,
+			"upgradePackages": true,
+			"username": "automatic",
+			"userUid": "automatic",
+			"userGid": "automatic",
+			"nonFreePackages": false
+		}
+	},
+	"mounts": [],
+	"overrideCommand": false,
+	"postAttachCommand": "sh .devcontainer/startup.sh",
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"ampersandtarski.language-ampersand",
+				"ms-azuretools.vscode-docker",
+				"mhutchie.git-graph",
+				"ms-vsliveshare.vsliveshare"
+			]
+		},
+		"codespaces": {
+			"openFiles": [
+				"Project/Example.adl"
+			]
+		}
+	},
+	"forwardPorts": [
+		8000
+	],
+	"remoteUser": "vscode"
+}
