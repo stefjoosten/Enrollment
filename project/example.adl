@@ -4,6 +4,7 @@ PURPOSE CONTEXT Enrollment
 Students of a course can enroll for any module that is part of the course.
 +}
 
+--
 PATTERN Courses
 -- The concepts
 CONCEPT Student "Someone who wants to study at this institute"
